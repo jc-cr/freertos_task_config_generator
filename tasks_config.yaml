@@ -1,20 +1,50 @@
 ---
-Task1:
-  TaskName: "RGB_Task"
-  TaskEntryPtr: "rgb_task"
+CAMERA_TASK:
+  TaskName: "Camera_Task"
+  TaskEntryPtr: "camera_task"
+  PeriodicityInMS: 33
+  ParametersPtr: 0
+  StackSize: STACK_SIZE_LARGE
+  TaskPriority: TASK_PRIORITY_MEDIUM
+  TaskHandle: "nullptr"
+  Core: "M4"
+
+M4_IPC_TASK:
+  TaskName: "M4_IPC_Task"
+  TaskEntryPtr: "m4_ipc_task"
   PeriodicityInMS: 33
   ParametersPtr: 0
   StackSize: STACK_SIZE_MEDIUM
-  TaskPriority: 2
+  TaskPriority: TASK_PRIORITY_MEDIUM
+  TaskHandle: "nullptr"
+  Core: "M4"
+
+TOF_TASK:
+  TaskName: "TOF_Task"
+  TaskEntryPtr: "tof_task"
+  PeriodicityInMS: 33
+  ParametersPtr: 0
+  StackSize: STACK_SIZE_MEDIUM
+  TaskPriority: TASK_PRIORITY_MEDIUM
   TaskHandle: "nullptr"
   Core: "M7"
 
-# Task2:
-#   TaskName: "TOF_Task"
-#   TaskEntryPtr: "tof_task"
-#   PeriodicityInMS: 33
-#   ParametersPtr: 0
-#   StackSize: 32 * 1024
-#   TaskPriority: 4
-#   TaskHandle: "nullptr"
-#   Core: "M7"
+RPC_TASK:
+  TaskName: "RPC_Task"
+  TaskEntryPtr: "rpc_task"
+  PeriodicityInMS: 33
+  ParametersPtr: 0
+  StackSize: STACK_SIZE_LARGE
+  TaskPriority: TASK_PRIORITY_LOW
+  TaskHandle: "nullptr"
+  Core: "M7"
+
+M7_IPC_TASK:
+  TaskName: "M7_IPC_Task"
+  TaskEntryPtr: "m7_ipc_task"
+  PeriodicityInMS: 33
+  ParametersPtr: 0
+  StackSize: STACK_SIZE_MEDIUM
+  TaskPriority: TASK_PRIORITY_MEDIUM
+  TaskHandle: "nullptr"
+  Core: "M7"
