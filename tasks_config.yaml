@@ -4,7 +4,7 @@ CAMERA_TASK:
   TaskEntryPtr: "camera_task"
   PeriodicityInMS: 33
   ParametersPtr: 0
-  StackSize: STACK_SIZE_LARGE
+  StackSize: STACK_SIZE_MEDIUM
   TaskPriority: TASK_PRIORITY_MEDIUM
   TaskHandle: "nullptr"
   Core: "M4"
@@ -19,6 +19,17 @@ M4_IPC_TASK:
   TaskHandle: "nullptr"
   Core: "M4"
 
+
+M7_IPC_TASK:
+  TaskName: "M7_IPC_Task"
+  TaskEntryPtr: "m7_ipc_task"
+  PeriodicityInMS: 33
+  ParametersPtr: 0
+  StackSize: STACK_SIZE_MEDIUM
+  TaskPriority: TASK_PRIORITY_MEDIUM
+  TaskHandle: "nullptr"
+  Core: "M7"
+
 TOF_TASK:
   TaskName: "TOF_Task"
   TaskEntryPtr: "tof_task"
@@ -29,22 +40,42 @@ TOF_TASK:
   TaskHandle: "nullptr"
   Core: "M7"
 
-RPC_TASK:
-  TaskName: "RPC_Task"
-  TaskEntryPtr: "rpc_task"
-  PeriodicityInMS: 33
-  ParametersPtr: 0
-  StackSize: STACK_SIZE_LARGE
-  TaskPriority: TASK_PRIORITY_LOW
-  TaskHandle: "nullptr"
-  Core: "M7"
-
-M7_IPC_TASK:
-  TaskName: "M7_IPC_Task"
-  TaskEntryPtr: "m7_ipc_task"
+INFERENCE_TASK:
+  TaskName: "Inference_Task"
+  TaskEntryPtr: "inference_task"
   PeriodicityInMS: 33
   ParametersPtr: 0
   StackSize: STACK_SIZE_MEDIUM
-  TaskPriority: TASK_PRIORITY_MEDIUM
+  TaskPriority: TASK_PRIORITY_HIGH
+  TaskHandle: "nullptr"
+  Core: "M7"
+
+DEPTH_ESTIMATION_TASK:
+  TaskName: "Depth_Estimation_Task"
+  TaskEntryPtr: "depth_estimation_task"
+  PeriodicityInMS: 33
+  ParametersPtr: 0
+  StackSize: STACK_SIZE_LARGE
+  TaskPriority: TASK_PRIORITY_HIGH
+  TaskHandle: "nullptr"
+  Core: "M7"
+
+STATE_CONTROLLER_TASK:
+  TaskName: "State_Controller_Task"
+  TaskEntryPtr: "state_controller_task"
+  PeriodicityInMS: 33
+  ParametersPtr: 0
+  StackSize: STACK_SIZE_LARGE
+  TaskPriority: TASK_PRIORITY_HIGH
+  TaskHandle: "nullptr"
+  Core: "M7"
+
+RGB_TASK:
+  TaskName: "RGB_Task"
+  TaskEntryPtr: "rgb_task"
+  PeriodicityInMS: 33
+  ParametersPtr: 0
+  StackSize: STACK_SIZE_SMALL
+  TaskPriority: TASK_PRIORITY_LOW
   TaskHandle: "nullptr"
   Core: "M7"
